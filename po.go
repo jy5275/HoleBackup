@@ -1,9 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"os"
 	"strconv"
+	"time"
 )
 
 var (
@@ -70,6 +73,40 @@ func (p *Post) MardAsDeleted() error {
 	}
 
 	return nil
+}
+
+func (p *Post) Print() string {
+	timestamp, _ := strconv.Atoi(p.Timestamp)
+	tm := time.Unix(int64(timestamp), 0).Format("2006-01-02 15:01:01")
+
+	contentStr := fmt.Sprintf("pid=%v, timestamp=%v, text=%v", p.Pid, tm, p.Text)
+
+	if p.Type == "image" {
+		contentStr += fmt.Sprintf("\nimage_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/%v", p.URL)
+	}
+	contentStr += "\n\n"
+
+	return contentStr
+}
+
+func BackUp() {
+	var posts []*Post
+
+	if err := db.Where("deleted = ?", true).Find(&posts).Error; err != nil {
+		logger.Fatalln(err)
+	}
+	dump, err := os.OpenFile("deleted_dump.txt", os.O_WRONLY|os.O_CREATE, 0755)
+	defer dump.Close()
+	if err != nil {
+		panic(err)
+	}
+
+	for _, p := range posts {
+		_, err := dump.WriteString(p.Print())
+		if err != nil {
+			logger.Println(err)
+		}
+	}
 }
 
 func SelectLatestPosts(startPid string) ([]*Post, error) {

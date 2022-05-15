@@ -1,10 +1,7 @@
 package main
 
 import (
-	"io"
-	"log"
 	"math/rand"
-	"os"
 	"time"
 )
 
@@ -14,8 +11,6 @@ const (
 	LOG_FILE        = "hole.log"
 	BACKTRACK_PAGES = 2
 )
-
-var logger *log.Logger
 
 func Run() {
 	hs := NewHoleStorage()
@@ -37,10 +32,5 @@ func Run() {
 }
 
 func main() {
-	file, err := os.OpenFile("hole.log", os.O_WRONLY|os.O_CREATE, 0755)
-	if err != nil {
-		panic(err)
-	}
-	logger = log.New(io.MultiWriter(os.Stdout, file), "", log.Lshortfile|log.LstdFlags)
 	Run()
 }
