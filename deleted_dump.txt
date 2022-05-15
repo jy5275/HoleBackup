@@ -2074,3 +2074,44 @@ pid=3569759, timestamp=2022-05-16 01:05:05, text=呼唤
 pid=3569760, timestamp=2022-05-16 01:05:05, text=
 image_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/e5069d22f692f671b7b403528a029a9f0c17580a_1078x806.jpeg
 
+pid=3569766, timestamp=2022-05-16 01:05:05, text=只希望今天的事能在北大历史上留下正面的评价，能被公正地评价和纪念
+
+pid=3569767, timestamp=2022-05-16 01:05:05, text=17级 入学以来感觉北大越来越红 还不如乖乖学清华 保个老1.5吧
+
+pid=3569775, timestamp=2022-05-16 01:05:05, text=听人说：五四就是反抗！
+我记得：五四不是爱国吗？
+听人说：民主就是大声说话！
+我记得：民主不是理性吗？
+听人说：北大就是敢为人先！
+我记得：北大不是“团结起来，振兴中华”吗？
+
+pid=3569778, timestamp=2022-05-16 01:05:05, text=你主子看得上你这么舔吗
+
+pid=3569781, timestamp=2022-05-16 01:05:05, text=
+image_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/bfb363de02069a31c8eb0dff65d8896baa3240fe_377x255.jpeg
+
+pid=3569783, timestamp=2022-05-16 01:05:05, text=Мне стыдно за людей, которые предали ваших партнеров вокруг вас.
+
+pid=3569787, timestamp=2022-05-16 01:05:05, text=删帖是不是特有快感
+
+pid=3569788, timestamp=2022-05-16 01:05:05, text=别看今天闹得欢，＿＿＿＿＿＿。
+
+pid=3569792, timestamp=2022-05-16 01:05:05, text=封堵校园内部的沟通渠道，逼着学生去校外平台起义，即便是公关手段也烂的一批
+
+pid=3569797, timestamp=2022-05-16 01:05:05, text=Мне стыдно за людей, которые предали ваших партнеров вокруг вас.
+
+pid=3569798, timestamp=2022-05-16 01:05:05, text=只要你觉得青研是sb 我们就是朋友
+
+pid=3569805, timestamp=2022-05-16 01:05:05, text=
+image_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/509f620388d8bdd5de40558fea878506286b1224_1080x1213.jpeg
+
+pid=3569806, timestamp=2022-05-16 01:05:05, text=
+image_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/aed0c1465509c17afb280fdb6c72bf48a9638cd4_377x255.jpeg
+
+pid=3569813, timestamp=2022-05-16 01:05:05, text=到达北京最高墙，腕扭！
+
+pid=3569815, timestamp=2022-05-16 01:05:05, text=管理员小哥哥想要一个贝大碗柳的tag请问可不可以呀，谢谢谢谢！
+
+pid=3569830, timestamp=2022-05-16 01:05:05, text=
+image_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/dbf44227ffe4875822582d237a83e170ba493c8d_828x1094.jpeg
+
