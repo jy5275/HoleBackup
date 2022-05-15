@@ -77,7 +77,7 @@ func (p *Post) MardAsDeleted() error {
 
 func (p *Post) Print() string {
 	timestamp, _ := strconv.Atoi(p.Timestamp)
-	tm := time.Unix(int64(timestamp), 0).Format("2006-01-02 15:01:01")
+	tm := time.Unix(int64(timestamp), 0).Format("2006-01-02 15:04:05")
 
 	contentStr := fmt.Sprintf("pid=%v, timestamp=%v, text=%v", p.Pid, tm, p.Text)
 
