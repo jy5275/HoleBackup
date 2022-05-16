@@ -80,11 +80,13 @@ func (p *Post) Print() string {
 	tm := time.Unix(int64(timestamp), 0).Format("2006-01-02 15:04:05")
 
 	contentStr := fmt.Sprintf("#%v %v\n%v", p.Pid, tm, p.Text)
+	if len(p.Text) > 0 {
+		contentStr += "\n"
+	}
 
 	if p.Type == "image" {
-		contentStr += fmt.Sprintf("\nhttps://pkuhelper.pku.edu.cn/services/pkuhole/images/%v", p.URL)
+		contentStr += fmt.Sprintf("https://pkuhelper.pku.edu.cn/services/pkuhole/images/%v\n", p.URL)
 	}
-	contentStr += "\n"
 
 	for _, c := range p.Comments {
 		timestamp, _ := strconv.Atoi(c.Timestamp)
