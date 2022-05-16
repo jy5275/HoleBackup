@@ -79,12 +79,20 @@ func (p *Post) Print() string {
 	timestamp, _ := strconv.Atoi(p.Timestamp)
 	tm := time.Unix(int64(timestamp), 0).Format("2006-01-02 15:04:05")
 
-	contentStr := fmt.Sprintf("pid=%v, timestamp=%v, text=%v", p.Pid, tm, p.Text)
+	contentStr := fmt.Sprintf("#%v %v\n%v", p.Pid, tm, p.Text)
 
 	if p.Type == "image" {
-		contentStr += fmt.Sprintf("\nimage_link: https://pkuhelper.pku.edu.cn/services/pkuhole/images/%v", p.URL)
+		contentStr += fmt.Sprintf("\nhttps://pkuhelper.pku.edu.cn/services/pkuhole/images/%v", p.URL)
 	}
-	contentStr += "\n\n"
+	contentStr += "\n"
+
+	for _, c := range p.Comments {
+		timestamp, _ := strconv.Atoi(c.Timestamp)
+		tm := time.Unix(int64(timestamp), 0).Format("2006-01-02 15:04:05")
+
+		contentStr += fmt.Sprintf("%v %v\n", tm, c.Text)
+	}
+	contentStr += "\n=====================================================================================\n"
 
 	return contentStr
 }
@@ -95,6 +103,13 @@ func BackUp() {
 	if err := db.Where("deleted = ?", true).Find(&posts).Error; err != nil {
 		logger.Fatalln(err)
 	}
+
+	for _, p := range posts {
+		if err := db.Where("pid = ?", p.Pid).Find(&p.Comments).Error; err != nil {
+			logger.Fatalln(err)
+		}
+	}
+
 	dump, err := os.OpenFile("deleted_dump.txt", os.O_WRONLY|os.O_CREATE, 0755)
 	defer dump.Close()
 	if err != nil {
