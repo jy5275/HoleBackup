@@ -14,7 +14,7 @@ var (
 )
 
 func init() {
-	dsn := "root:root@tcp(188.166.217.29:3306)/hole?charset=utf8mb4"
+	dsn := "root:TODO@tcp(TODO:3306)/hole?charset=utf8mb4"
 	var err error
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
